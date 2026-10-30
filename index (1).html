@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For Muskan — I’m sorry</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Caveat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff7f3;--ink:#2a2140;--soft:#6d6283;--rose:#e4718f;--gold:#f2b84b;--card:#ffffff;--sky1:#ffd9e2;--sky2:#d9ccff;--line:#ecdde6;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#16122b;--ink:#f6eefa;--soft:#b7aacb;--card:#221b3d;--sky1:#3a2652;--sky2:#1f2a5c;--line:#372e57}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#16122b;--ink:#f6eefa;--soft:#b7aacb;--card:#221b3d;--sky1:#3a2652;--sky2:#1f2a5c;--line:#372e57}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;font-size:1.3rem;line-height:1.65;overflow-x:hidden}
+.hand{font-family:Caveat,"Segoe Script",cursive}
+/* intro */
+#intro{position:fixed;inset:0;z-index:50;background:linear-gradient(180deg,var(--sky2),var(--sky1) 70%);overflow:hidden;transition:opacity 1s,visibility 1s}
+#intro.gone{opacity:0;visibility:hidden}
+.sun{position:absolute;top:12%;right:14%;width:90px;height:90px;border-radius:50%;background:var(--gold);box-shadow:0 0 80px 30px rgba(242,184,75,.45)}
+.ground{position:absolute;left:0;right:0;bottom:0;height:26%;background:#7cb69a;border-top:6px solid #5e9c80}
+.ground::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 40px,rgba(255,255,255,.12) 40px 44px)}
+#boy{position:absolute;bottom:calc(26% - 6px);left:0;width:150px;transform:translateX(-200px)}
+#intro.run #boy{animation:run 4.2s cubic-bezier(.3,.6,.3,1) forwards}
+@keyframes run{to{transform:translateX(calc(50vw - 75px - 70px))}}
+#bob{animation:none}
+#intro.run #bob{animation:bob .38s ease-in-out infinite}
+#intro.stop #bob{animation:none}
+@keyframes bob{50%{transform:translateY(-9px)}}
+.leg,.arm{transform-box:fill-box;transform-origin:50% 0}
+#intro.run .legA{animation:sw .38s ease-in-out infinite alternate}
+#intro.run .legB{animation:sw .38s ease-in-out infinite alternate-reverse}
+#intro.run .armB{animation:sw .38s ease-in-out infinite alternate}
+@keyframes sw{from{transform:rotate(-38deg)}to{transform:rotate(38deg)}}
+#intro.run .flower{animation:wob .38s ease-in-out infinite alternate;transform-box:fill-box;transform-origin:50% 100%}
+@keyframes wob{to{transform:rotate(8deg)}}
+.dust{position:absolute;bottom:26%;width:10px;height:10px;border-radius:50%;background:#fff;opacity:0}
+#intro.run .dust{animation:dust .7s ease-out infinite}
+@keyframes dust{0%{opacity:.7;transform:translate(0,0) scale(1)}100%{opacity:0;transform:translate(-40px,-16px) scale(2.4)}}
+.hello{position:absolute;left:50%;top:22%;transform:translate(-50%,10px);width:min(86vw,420px);text-align:center;opacity:0;transition:opacity .8s,transform .8s;pointer-events:none}
+#intro.stop .hello{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+.note{background:#fffdf8;color:#2a2140;border-radius:6px;padding:1.4rem 1.2rem;box-shadow:0 14px 40px rgba(42,33,64,.28);transform:rotate(-2deg);border:1px solid #f0e2d0}
+.note b{display:block;font-size:2rem;line-height:1.1}
+.note span{display:block;margin-top:.4rem;font-size:1.3rem;color:#6d6283}
+.btn{margin-top:1.1rem;font:inherit;font-family:Caveat,cursive;font-size:1.5rem;background:var(--rose);color:#fff;border:0;border-radius:99px;padding:.45rem 1.6rem;cursor:pointer;box-shadow:0 8px 20px rgba(228,113,143,.4);transition:transform .2s}
+.btn:hover{transform:scale(1.05)}
+.btn:focus-visible,.skip:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.skip{position:absolute;top:calc(env(safe-area-inset-top,0px) + 14px);right:16px;background:rgba(255,255,255,.55);border:0;border-radius:99px;padding:.2rem .9rem;font:1rem Georgia,serif;color:#2a2140;cursor:pointer}
+/* page */
+main{max-width:720px;margin:0 auto;padding:0 1.4rem}
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;text-align:center;padding:5rem 0 3rem}
+.hero small{font-size:1.5rem;color:var(--rose)}
+h1{font-weight:600;font-size:clamp(3rem,13vw,6.4rem);line-height:.95;margin:.4rem 0 1.4rem;letter-spacing:-.02em}
+.hero p{max-width:30ch;margin:0 auto;color:var(--soft)}
+.hint{margin-top:2.5rem;color:var(--soft);font-size:1rem}
+.letter{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:2.4rem 1.6rem;box-shadow:0 20px 50px rgba(120,80,140,.12)}
+.letter p{margin:0 0 1.2rem;max-width:62ch}
+.big{font-size:clamp(1.8rem,6vw,2.5rem);line-height:1.2;font-style:italic;margin:2rem 0}
+.words{padding:4rem 0}
+.words h2,.promise h2{font-size:clamp(2rem,7vw,3rem);font-weight:600;line-height:1.1;margin:0 0 1.5rem}
+.chips{display:flex;flex-direction:column;gap:.8rem}
+.chip{border-left:4px solid var(--rose);padding:.5rem 1rem;background:var(--card);border-radius:0 8px 8px 0;font-style:italic;cursor:pointer;transition:opacity .9s,transform .9s,filter .9s}
+.chip.said{opacity:.55;transform:translateX(18px);filter:blur(.5px)}
+.chip.said::after{content:"  — and I’m sorry for it.";font-style:normal;color:var(--rose);font-family:Caveat,cursive;font-size:1.4rem}
+.promise{padding:2rem 0 4rem}
+.promise ul{list-style:none;padding:0;margin:0}
+.promise li{padding:.9rem 0;border-bottom:1px solid var(--line)}
+.end{text-align:center;padding:4rem 0 6rem}
+.end .sign{font-size:2.4rem;color:var(--rose);margin-top:1rem}
+#heart{display:none;font-size:5rem;animation:beat 1s ease-in-out infinite}
+@keyframes beat{50%{transform:scale(1.18)}}
+.petal{position:fixed;top:-30px;z-index:40;width:14px;height:18px;border-radius:70% 0 70% 0;background:var(--rose);opacity:.8;pointer-events:none;animation:fall linear forwards}
+@keyframes fall{to{transform:translate(var(--dx),110vh) rotate(540deg)}}
+.rv{opacity:0;transform:translateY(14px);transition:opacity 1s,transform 1s}.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){#intro.run #boy{animation-duration:.01s}#intro.run #bob,#intro.run .leg,#intro.run .arm,#intro.run .flower,#intro.run .dust,#heart{animation:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div id="intro" role="dialog" aria-label="Apology introduction">
+  <button class="skip" id="skip">Skip</button>
+  <div class="sun"></div><div class="ground"></div>
+  <div class="dust" style="left:10%"></div><div class="dust" style="left:30%"></div>
+  <div id="boy" aria-hidden="true">
+    <div id="bob">
+    <svg viewBox="0 0 150 170" width="150">
+      <g class="leg legA"><rect x="62" y="98" width="12" height="52" rx="6" fill="#2f3e5c"/><ellipse cx="72" cy="152" rx="13" ry="6" fill="#e4718f"/></g>
+      <g class="arm armB"><rect x="58" y="60" width="9" height="38" rx="4.5" fill="#f6cfa6"/></g>
+      <rect x="48" y="52" width="40" height="52" rx="16" fill="#f2b84b"/>
+      <g class="leg legB"><rect x="66" y="98" width="12" height="52" rx="6" fill="#3b4c72"/><ellipse cx="76" cy="152" rx="13" ry="6" fill="#e4718f"/></g>
+      <circle cx="68" cy="34" r="22" fill="#f6cfa6"/>
+      <path d="M46 32c0-18 14-24 26-22 12 1 20 10 18 22-8-8-22-10-44 0z" fill="#2a2140"/>
+      <circle cx="76" cy="36" r="2.6" fill="#2a2140"/><path d="M70 45q6 5 12 0" stroke="#2a2140" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+      <circle cx="84" cy="42" r="4" fill="#f4a6b7" opacity=".7"/>
+      <path d="M80 66L112 56" stroke="#f6cfa6" stroke-width="9" stroke-linecap="round"/>
+      <g class="flower"><path d="M112 56L118 12" stroke="#4f9a6d" stroke-width="4" stroke-linecap="round"/><path d="M115 36q12-4 16-14-12 0-16 14z" fill="#4f9a6d"/>
+      <g transform="translate(119 10)"><circle cx="0" cy="-9" r="7" fill="#e4718f"/><circle cx="9" cy="-3" r="7" fill="#e4718f"/><circle cx="6" cy="8" r="7" fill="#e4718f"/><circle cx="-6" cy="8" r="7" fill="#e4718f"/><circle cx="-9" cy="-3" r="7" fill="#e4718f"/><circle r="5.5" fill="#f2b84b"/></g></g>
+    </svg></div>
+  </div>
+  <div class="hello">
+    <div class="note hand"><b>For Muskan (AKA Muskemolen)</b><span>I ran all the way here to say something.</span></div>
+    <button class="btn" id="open">Open my note</button>
+  </div>
+</div>
+
+<main>
+  <section class="hero">
+    <small class="hand">for my sister, Muskan (AKA Muskemolen)</small>
+    <h1>I’m sorry.</h1>
+    <p>For every single word that came out of my mouth and hurt you.</p>
+    <div class="hint">Scroll down. There’s more I need to say.</div>
+  </section>
+
+  <section class="letter rv">
+    <p>Muskan (AKA Muskemolen),</p>
+    <p>I’ve thought about it again and again, and the truth is simple: words can hurt more than anything else, and mine did. I said things I shouldn’t have said. Some I said without thinking, and some I said when I was angry. None of them were fair to you.</p>
+    <p class="big">I’m sorry for every single word that hurt you.</p>
+    <p>You are my sister. You should always feel safe, loved and heard with me, and I let you down. That’s on me, not on you, and I won’t make excuses.</p>
+  </section>
+
+  <section class="words rv">
+    <h2>The words I wish I could take back.</h2>
+    <p style="color:var(--soft)">Tap each one.</p>
+    <div class="chips">
+      <div class="chip" tabindex="0" role="button">The words I said in anger.</div>
+      <div class="chip" tabindex="0" role="button">The words I said without thinking.</div>
+      <div class="chip" tabindex="0" role="button">The words that sounded like jokes but weren’t.</div>
+      <div class="chip" tabindex="0" role="button">The words I said that I can’t take back.</div>
+      <div class="chip" tabindex="0" role="button">Every other word that made you feel small.</div>
+    </div>
+  </section>
+
+  <section class="promise rv">
+    <h2>What I promise you.</h2>
+    <ul>
+      <li>I will think before I speak.</li>
+      <li>I will listen when you talk, really listen.</li>
+      <li>I will say sorry quickly, not late.</li>
+      <li>I will use my words to lift you up.</li>
+    </ul>
+  </section>
+
+  <section class="end rv">
+    <p>If you can forgive me, even a little, I’d be the happiest brother in the world.</p>
+    <button class="btn" id="forgive">Tap if you forgive me</button>
+    <div id="heart" aria-hidden="true">💗</div>
+    <p id="thanks" class="hand" style="display:none;font-size:1.8rem;margin:.5rem 0 0">Thank you, Muskemolen. I love you.</p>
+    <div class="sign hand">Your brother</div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var intro=document.getElementById('intro');
+  function petals(n){for(var i=0;i<n;i++){(function(i){setTimeout(function(){var p=document.createElement('div');p.className='petal';p.style.left=Math.random()*100+'vw';p.style.setProperty('--dx',(Math.random()*160-80)+'px');p.style.animationDuration=(4+Math.random()*4)+'s';p.style.background=['#e4718f','#f4a6b7','#f2b84b'][i%3];document.body.appendChild(p);setTimeout(function(){p.remove()},9000)},i*140)})(i)}}
+  function close(){intro.classList.add('gone');petals(26);setTimeout(function(){intro.style.display='none'},1100)}
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  setTimeout(function(){intro.classList.add('run')},350);
+  setTimeout(function(){intro.classList.add('stop')},reduce?500:4700);
+  document.getElementById('open').onclick=close;
+  document.getElementById('skip').onclick=close;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.chip').forEach(function(c){
+    function f(){c.classList.add('said')}
+    c.addEventListener('click',f);c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f()}});
+  });
+  document.getElementById('forgive').onclick=function(){this.style.display='none';document.getElementById('heart').style.display='block';document.getElementById('thanks').style.display='block';petals(40)};
+})();
+</script>
+</body>
+</html>
